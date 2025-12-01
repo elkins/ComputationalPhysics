@@ -31,6 +31,6 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.xlim(-lim,lim)
 plt.ylim(-lim,lim)
-plt.annotate('N = '+str(N),fontsize=14,xy=(0.14,0.84),xycoords='figure fraction')
+plt.annotate(f'N = {N}',fontsize=14,xy=(0.14,0.84),xycoords='figure fraction')
 plt.legend()
 #-------------------------------------------------------------------

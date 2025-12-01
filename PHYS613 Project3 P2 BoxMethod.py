@@ -52,8 +52,8 @@ if spanning > 0:
     logN = np.log(Nsite)
     
     # calculate fractal dimension
-    df = round(logN[len(logN)-1]/logL[len(logL)-1],3)  
-    print 'df = ',df      
+    df = round(logN[-1]/logL[-1],3)
+    print('df = ',df)      
     
     # plot M vs l trend - should follow power law M = l**b
     plt.subplot(2,1,1)
@@ -72,4 +72,4 @@ if spanning > 0:
     plt.legend(loc=2)
 
 t2 = datetime.now()
-print 'runtime = ',t2-t1
+print(f'runtime = {t2-t1}')

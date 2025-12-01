@@ -45,8 +45,8 @@ for i in Nsteps:
             if 4.0/6.0 <= rand[k] < 5.0/6.0: pos[2] = pos[2]+1
             if 5.0/6.0 <= rand[k] < 6.0/6.0: pos[2] = pos[2]-1
         
-        # get total displacement traveled and store to array
-        dist = (pos[0]**2 + pos[1]**2 + pos[2]**2)**0.5
+        # get displacement traveled and store to array
+        dist = np.sqrt(pos[0]**2 + pos[1]**2 + pos[2]**2)
         disp.append(dist)
     
     # get mean displacement for each N steps over 100 samples
@@ -62,8 +62,8 @@ for i in Nsteps:
 x = np.log(np.array(Nsteps))
 y = np.log(np.array(Mdisp))
 # calculate slope of log-log plot to get power coefficient
-rise = y[len(y)-1] - y[0]
-run = x[len(x)-1] - x[0]
+rise = y[-1] - y[0]
+run = x[-1] - x[0]
 slope = round(rise/run,3)
 
 # plot mean displacement vs N steps 

@@ -11,7 +11,6 @@ molecule data with a fit model following the Morse potential.
 """
 
 from LeastSquares import gaussNewton3
-from math import exp
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -21,15 +20,15 @@ import matplotlib.pyplot as plt
 pos1, pos2, E = np.loadtxt('P1Molecule.txt', skiprows=3, unpack=True)
 
 # get distance R between atom positions
-Rdist = [abs(pos1[i] - pos2[i]) for i in range(len(E))]
+Rdist = [abs(p1 - p2) for p1, p2 in zip(pos1, pos2)]
 
     
 # function for Morse potential to model molecule interatomic potential
 #*******************************************************************
-f = lambda a,b,c,x: (a - a*exp(b*(c-x)))**2 - a
-dfa = lambda a,b,c,x: 2*a*(exp(b*(c-x)))**2 - 1
-dfb = lambda a,b,c,x: 2*(a**2)*(c-x)*exp(b*(c-x))*(exp(b*(c-x)) - 1)
-dfc = lambda a,b,c,x: 2*(a**2)*b*exp(b*(c-x))*(exp(b*(c-x)) - 1)
+f = lambda a,b,c,x: (a - a*np.exp(b*(c-x)))**2 - a
+dfa = lambda a,b,c,x: 2*a*(np.exp(b*(c-x)))**2 - 1
+dfb = lambda a,b,c,x: 2*(a**2)*(c-x)*np.exp(b*(c-x))*(np.exp(b*(c-x)) - 1)
+dfc = lambda a,b,c,x: 2*(a**2)*b*np.exp(b*(c-x))*(np.exp(b*(c-x)) - 1)
 #*******************************************************************
 
 # call gauss newton method from my least squares module

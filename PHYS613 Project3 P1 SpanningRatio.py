@@ -63,4 +63,4 @@ plt.ylim(0,1)
 plt.legend(loc=2)
 
 t2 = datetime.now()
-print 'runtime = ',t2-t1
+print(f'runtime = {t2-t1}')

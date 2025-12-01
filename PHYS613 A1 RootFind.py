@@ -34,18 +34,18 @@ def rootBisection(g, f, xI, xF, Tol, nMax, Mthd):
             if f(xI)*f(xMid) > 0:
                 xI = xMid
                 error = abs(xMid - xiMid)  # calculate approx error
-                n = n + 1
+                n += 1
                 xiMid = xMid               # store the n-1 midpoint
                 
             elif f(xI)*f(xMid) < 0:
                 xF = xMid
                 error = abs(xMid - xiMid)  # calculate approx error
-                n = n + 1
+                n += 1
                 xiMid = xMid               # store the n-1 midpoint
         
         # output results to user         
-        print 'Root =', xMid
-        print 'Iterations = ', n-1
+        print(f'Root = {xMid}')
+        print(f'Iterations = {n-1}')
             
 # end rootBisection function
 #***********************************************************************
@@ -87,12 +87,12 @@ def rootNewtonRaphson(g, f, xI, xF, Tol, nMax, Mthd):
                     xF = xn1
                 
             error = abs(xn1 - xn0)  # calculate approx error
-            n = n + 1
+            n += 1
             xn0 = xn1               # store the n-1 value for x
             
         # output results to user
-        print 'Root =', xn1
-        print 'Iterations =', n-1
+        print(f'Root = {xn1}')
+        print(f'Iterations = {n-1}')
             
 # end rootNewtonRaphson function
 #***********************************************************************  
@@ -118,8 +118,8 @@ def rootFind(g, xI, xF, Tol, nMax, Mthd):
     notnum1 = math.isnan(f(xI)*f(xF))
     notnum2 = math.isinf(f(xI)*f(xF))
     if f(xI)*f(xF) >= 0 or notnum1 == True or notnum2 == True: 
-        print '\nNO ROOTS BETWEEN THESE POINTS OR FUNCTION IS UNDEFINED.'
-        print 'PLEASE ADJUST BRACKET VALUES.\n'
+        print('\nNO ROOTS BETWEEN THESE POINTS OR FUNCTION IS UNDEFINED.')
+        print('PLEASE ADJUST BRACKET VALUES.\n')
         return
     
     if Mthd == 'bisection':
@@ -131,7 +131,7 @@ def rootFind(g, xI, xF, Tol, nMax, Mthd):
        rootNewtonRaphson(g, f, xI, xF, Tol, nMax, Mthd)
 
     else:
-        print '\nINVALID ENTRY. PLEASE ADJUST INPUT AND TRY AGAIN.\n'
+        print('\nINVALID ENTRY. PLEASE ADJUST INPUT AND TRY AGAIN.\n')
 #***********************************************************************
 
 

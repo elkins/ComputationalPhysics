@@ -60,7 +60,7 @@ fs = fs*2*np.pi
 # find freq at strongest peak
 indx = np.where(spectrum==max(spectrum))[0]
 mx = round(fs[indx],3)
-print 'peak = ',mx
+print(f'peak = {mx}')
 
 # plot results
 # -----------------------------

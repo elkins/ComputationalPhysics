@@ -68,7 +68,7 @@ for i in range(N-1):
     if py[i]*py[i+1] < 0:
         indx.append(i)
 
-print '\n','points = ',len(indx)
+print('\n','points = ',len(indx))
 
 # Poincare section will plot phase portrait at these points
 yy = y[indx]
@@ -94,8 +94,8 @@ indX = np.where(psX == max(psX))[0]
 indY = np.where(psY == max(psY))[0]
 mX = round(fsX[indX],3)
 mY = round(fsY[indY],3)
-print 'x peak = ',mX
-print 'y peak = ',mY
+print(f'x peak = {mX}')
+print(f'y peak = {mY}')
 
 # plot results
 # -----------------------------

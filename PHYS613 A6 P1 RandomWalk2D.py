@@ -51,7 +51,7 @@ for i in Nsteps:
             yp.append(pos[1])
         
         # get total displacement traveled and store to array
-        dist = (pos[0]**2 + pos[1]**2)**0.5
+        dist = np.sqrt(pos[0]**2 + pos[1]**2)
         disp.append(dist)
     
     # get mean displacement for each N steps over 100 samples
@@ -62,8 +62,8 @@ for i in Nsteps:
 x = np.log(np.array(Nsteps))
 y = np.log(np.array(Mdisp))
 # calculate slope of log-log plot to get power coefficient
-rise = y[len(y)-1] - y[0]
-run = x[len(x)-1] - x[0]
+rise = y[-1] - y[0]
+run = x[-1] - x[0]
 slope = round(rise/run,3)
 
 
@@ -81,7 +81,7 @@ plt.subplot(211)
 plt.plot(Nsteps,Mdisp,'bo-',label='2-D Random Walk')
 plt.xlabel('N Steps')
 plt.ylabel('Mean Displacement')
-plt.annotate('Samples = '+str(Nwalks)+' Walks',fontsize=15,xy=(0.15,0.78),xycoords='figure fraction')
+plt.annotate(f'Samples = {Nwalks} Walks',fontsize=15,xy=(0.15,0.78),xycoords='figure fraction')
 plt.legend(loc=2)
     
 # plot log-log of mean displacement vs N steps 
@@ -89,5 +89,5 @@ plt.subplot(212)
 plt.plot(x,y,'bo-',label='Log-Log Plot')
 plt.xlabel('log N Steps')
 plt.ylabel('log Mean Displacement')
-plt.annotate('Slope = '+str(slope),fontsize=15,xy=(0.15,0.34),xycoords='figure fraction')
+plt.annotate(f'Slope = {slope}',fontsize=15,xy=(0.15,0.34),xycoords='figure fraction')
 plt.legend(loc=2)

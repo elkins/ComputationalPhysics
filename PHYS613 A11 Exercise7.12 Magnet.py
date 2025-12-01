@@ -59,7 +59,7 @@ iters = 0
 
 while done == 'no':
     done = 'yes'
-    iters = iters + 1    
+    iters += 1    
     
     # iterate over xy-grid (i = y-row, j = x-col)
     for i in range(1,Ny-1):
@@ -98,14 +98,14 @@ while done == 'no':
             if err > tol:
                 done = 'no'
 
-print '\n','iterations = ',iters
+print('\n','iterations = ',iters)
 # --------------------------------------------
 
 
 # set contour levels for plotting
 phiMax = np.max(phi)
 levels = np.arange(0,int(phiMax),0.5)
-print 'max potential =',phiMax
+print('max potential =',phiMax)
 
 # build matrix for plotting full cross-section
 # this reflects matrix in all 4 quadrants

@@ -89,8 +89,8 @@ def GaussNewtonFit(x,y,a,b,c,n):
     # computed as variance = (sum of squares of errors) / (nDataPts-nFitCoefficients-1)
     variance = varsum/(pts-3-1)
     
-    print 'coeffs=',a,b,c
-    print 'variance=',variance
+    print(f'coeffs={a}, {b}, {c}')
+    print(f'variance={variance}')
             
     # plot data set with fractal dimension fit model
     plt.xlabel('Concentration')

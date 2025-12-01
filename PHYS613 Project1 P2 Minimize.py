@@ -80,7 +80,7 @@ def P(pos0):
 # ------------------------------------------------------------------
 # set initial parameters
 Natoms = 3                 # number of atoms to initialize
-Nrandom = 01               # number of iterations to run
+Nrandom = 1                # number of iterations to run
 
 r0 = (8.253*0.52917721)    # atomic bond distance (angstroms)
 Pmin = []                  # stores minima of function (eV)
@@ -102,7 +102,7 @@ for i in range(Nrandom):
         Pmin.append(round(minFun,4))
         Ppos.append(minPos)
         
-print 'minima = ',Pmin
+print(f'minima = {Pmin}')
 # ------------------------------------------------------------------
 
 
@@ -135,7 +135,7 @@ plt.show()
 for i in range(n):
     for j in range(n):
         if j > i:
-            print 'distance = ',sqrt((x[i]-x[j])**2 + (y[i]-y[j])**2 + (z[i]-z[j])**2)
+            print(f'distance = {np.sqrt((x[i]-x[j])**2 + (y[i]-y[j])**2 + (z[i]-z[j])**2)}')
 # ------------------------------------------------------------------
 
 

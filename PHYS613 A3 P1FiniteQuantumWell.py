@@ -62,7 +62,7 @@ def rootNewtonRaphson(g, f, xI, xF, Tol, nMax):
                     xF = xn1
                 
             error = abs(xn1 - xn0)  # calculate approx error
-            n = n + 1
+            n += 1
             xn0 = xn1               # store the n-1 value for x
             
         # output results to user
@@ -106,7 +106,7 @@ f = lambda x: eval(g)
 E1 = rootNewtonRaphson(g, f, 0, 0.2, 10e-5, 30)
 E2 = rootNewtonRaphson(g, f, 0.2, 0.4, 10e-5, 30)
 E3 = rootNewtonRaphson(g, f, 0.6, 0.8, 10e-5, 30)
-print 'Eigenvalues = ',E1,E2,E3
+print(f'Eigenvalues = {E1}, {E2}, {E3}')
 
 
 # setup wavefunction plotting as function of distance & plot potential well

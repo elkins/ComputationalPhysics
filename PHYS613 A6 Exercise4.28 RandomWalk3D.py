@@ -84,7 +84,7 @@ for i in range(Nwalks):
 
 # get mean displacement over Nwalks
 mean = np.average(disp)
-print 'Mean Displacement = ',mean, ' meters'
+print(f'Mean Displacement = {mean} meters')
 
 
 # plot 3-D diffusive path of molecule inside sphere

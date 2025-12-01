@@ -10,7 +10,6 @@ Nick Crump
 From Computational Physics by Devries
 """
 
-from math import sin,cos,exp,sqrt
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -23,7 +22,7 @@ def evenFunc(a,m,V0,E):
     alpha = (2.0*m*E/hbarSq)**0.5
     beta = ((2.0*m*(V0-E))/hbarSq)**0.5
     
-    fEven = beta*cos(alpha*a) - alpha*sin(alpha*a)
+    fEven = beta*np.cos(alpha*a) - alpha*np.sin(alpha*a)
     return fEven
 #***********************************************************************  
 
@@ -36,7 +35,7 @@ def oddFunc(a,m,V0,E):
     alpha = (2.0*m*E/hbarSq)**0.5
     beta = ((2.0*m*(V0-E))/hbarSq)**0.5
     
-    fOdd = alpha*cos(alpha*a) + beta*sin(alpha*a)
+    fOdd = alpha*np.cos(alpha*a) + beta*np.sin(alpha*a)
     return fOdd
 #***********************************************************************  
 
@@ -59,13 +58,13 @@ def rootBisection(f, xI, xF, Tol, nMax):
             if f(xI)*f(xMid) > 0:
                 xI = xMid
                 error = abs(xMid - xiMid)  # calculate approx error
-                n = n + 1
+                n += 1
                 xiMid = xMid               # store the n-1 midpoint
                 
             elif f(xI)*f(xMid) < 0:
                 xF = xMid
                 error = abs(xMid - xiMid)  # calculate approx error
-                n = n + 1
+                n += 1
                 xiMid = xMid               # store the n-1 midpoint
         
         # output results to user         
@@ -90,7 +89,7 @@ sfOdd = lambda E: ((2.0*m*E/hbarSq)**0.5)*cos(((2.0*m*E/hbarSq)**0.5)*a) + ((2.0
 
 Eeven = rootBisection(sfEven, 0, 2.0, 10e-5, 30)
 Eodd = rootBisection(sfOdd, 2.0, 4.0, 10e-5, 30)
-print 'Eigenvalues = ', Eeven, Eodd
+print(f'Eigenvalues = {Eeven}, {Eodd}')
 
 
 # setup plotting of allowed energy equation as function of energy
@@ -122,38 +121,38 @@ R2 = np.arange(-0.3,0.301,0.01)  # region 2 inside well
 R3 = np.arange(0.3,0.601,0.01)   # region 3 right of well
 
 # alpha & beta values for even states
-alphEven = sqrt(2*m*Eeven/hbarSq)
-betaEven = sqrt(2*m*(V0-Eeven)/hbarSq)
+alphEven = np.sqrt(2*m*Eeven/hbarSq)
+betaEven = np.sqrt(2*m*(V0-Eeven)/hbarSq)
 
 # even state wavefunctions for 3 regions (arbitrary normalization coefficients)
 # wavefunctions shifted to make energy eigenvalues the zero baseline
-psiR1even = [30*exp(betaEven*i)+Eeven for i in R1]
-psiR2even = [cos(alphEven*i)+Eeven for i in R2]
-psiR3even = [30*exp(-betaEven*i)+Eeven for i in R3]
+psiR1even = [30*np.exp(betaEven*i)+Eeven for i in R1]
+psiR2even = [np.cos(alphEven*i)+Eeven for i in R2]
+psiR3even = [30*np.exp(-betaEven*i)+Eeven for i in R3]
 
 # alpha & beta values for odd states
-alphOdd = sqrt(2*m*Eodd/hbarSq)
-betaOdd = sqrt(2*m*(V0-Eodd)/hbarSq) 
+alphOdd = np.sqrt(2*m*Eodd/hbarSq)
+betaOdd = np.sqrt(2*m*(V0-Eodd)/hbarSq) 
 
 # odd state wavefunctions for 3 regions (arbitrary normalization coefficients)
 # wavefunctions shifted to make energy eigenvalues the zero baseline
-psiR1odd = [-30*exp(betaOdd*i)+Eodd for i in R1]
-psiR2odd = [sin(alphOdd*i)+Eodd for i in R2]
-psiR3odd = [30*exp(-betaOdd*i)+Eodd for i in R3]
+psiR1odd = [-30*np.exp(betaOdd*i)+Eodd for i in R1]
+psiR2odd = [np.sin(alphOdd*i)+Eodd for i in R2]
+psiR3odd = [30*np.exp(-betaOdd*i)+Eodd for i in R3]
 
     
 plt.figure(2)
 # plot lines for potential V(x)
-plt.plot([-0.6,-0.3],[10,10],'k',linewidth='4')
-plt.plot([-0.3,-0.3],[10,0],'k',linewidth='4')
-plt.plot([-0.3,0.3],[0,0], 'k',linewidth='4')
-plt.plot([0.3,0.3], [0,10], 'k',linewidth='4')
-plt.plot([0.3,0.6],[10,10], 'k',linewidth='4')
+plt.plot([-0.6,-0.3],[10,10],'k',linewidth=4)
+plt.plot([-0.3,-0.3],[10,0],'k',linewidth=4)
+plt.plot([-0.3,0.3],[0,0], 'k',linewidth=4)
+plt.plot([0.3,0.3], [0,10], 'k',linewidth=4)
+plt.plot([0.3,0.6],[10,10], 'k',linewidth=4)
 plt.xticks([-0.6,-0.4,-0.2,0,0.2,0.4,0.6])
 plt.annotate('$V_0$',fontsize=16,xy=(0.23,0.82),xycoords='figure fraction')
 # plot lines for energy eigenvalues
-plt.plot([-0.6,0.6],[Eeven,Eeven],'g',linewidth='2',linestyle='--')
-plt.plot([-0.6,0.6],[Eodd,Eodd],'g',linewidth='2',linestyle='--')
+plt.plot([-0.6,0.6],[Eeven,Eeven],'g',linewidth=2,linestyle='--')
+plt.plot([-0.6,0.6],[Eodd,Eodd],'g',linewidth=2,linestyle='--')
 plt.annotate('Ground State Energies',fontsize=12,xy=(0.39,0.27),xycoords='figure fraction')
 plt.annotate('$E_{even}=0.71545$',fontsize=12,xy=(0.75,0.20),xycoords='figure fraction')
 plt.annotate('$E_{odd}=2.82139$',fontsize=12,xy=(0.755,0.40),xycoords='figure fraction')

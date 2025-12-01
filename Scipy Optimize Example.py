@@ -35,5 +35,5 @@ x0 = np.asarray((0, 0))
 # call scipy minimization function using a nonlinear conjugate gradient algorithm
 res1 = optimize.fmin_cg(f, x0, fprime=gradf, args=args)
 # returns an array of the (u,v) coordinates of the function global minimium
-print 'res1 = ', res1
+print(f'res1 = {res1}')
 

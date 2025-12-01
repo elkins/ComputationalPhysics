@@ -37,10 +37,10 @@ Nx = 100         # space steps
 eps = (c*dt/dx)**2
 
 if eps**0.5 > 1.0:
-    print '\n'
-    print '******************************'
-    print '  WARNING: UNSTABLE SOLUTION'
-    print '******************************'
+    print('\n')
+    print('******************************')
+    print('  WARNING: UNSTABLE SOLUTION')
+    print('******************************')
 # --------------------------------------------
 
 # step through wave equation solutions

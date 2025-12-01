@@ -47,7 +47,7 @@ def LennardJones(pos0):
             xj,yj,zj = x0[j],y0[j],z0[j]  
             
             # construct 3-D distance equation
-            rij = ((xi-xj)**2 + (yi-yj)**2 + (zi-zj)**2)**0.5
+            rij = np.sqrt((xi-xj)**2 + (yi-yj)**2 + (zi-zj)**2)
 
             
             # calculate terms of Lennard-Jones potential
@@ -134,8 +134,8 @@ def GA(nAtoms, sd, nPop, Pcross, Pmute, Pperm, nIters):
         # if number selected for mating is less than 10 print error and break
         nCross = int(nPop*Pcross)
         if nCross < 10:
-            print '\n','WARNING: POPULATION CRITICALLY LOW'
-            print 'Adjust Population Size or Crossover Probability','\n'
+            print('\n', 'WARNING: POPULATION CRITICALLY LOW')
+            print('Adjust Population Size or Crossover Probability', '\n')
             iters = iters+1
             break
         # get index values of best individuals for mating
@@ -197,8 +197,8 @@ def GA(nAtoms, sd, nPop, Pcross, Pmute, Pperm, nIters):
         # if number selected for mutation is less than 1 print error and break
         nMute = int(nPop*Pmute)
         if nMute < 1:
-            print '\n','WARNING: MUTATION PROBABILITY TOO LOW'
-            print 'Adjust Population Size or Mutation Probability','\n'
+            print('\n', 'WARNING: MUTATION PROBABILITY TOO LOW')
+            print('Adjust Population Size or Mutation Probability', '\n')
             iters = iters+1
             break
         # select and mutate 
@@ -218,8 +218,8 @@ def GA(nAtoms, sd, nPop, Pcross, Pmute, Pperm, nIters):
         # if number selected for permation is less than 2 print error and break
         nPerm = int(nPop*Pperm)
         if nMute < 2:
-            print '\n','WARNING: PERMUTATION PROBABILITY TOO LOW'
-            print 'Adjust Population Size or Permutation Probability','\n'
+            print('\\n','WARNING: PERMUTATION PROBABILITY TOO LOW')
+            print('Adjust Population Size or Permutation Probability','\\n')
             iters = iters+1
             break
         # select and permutate
@@ -275,8 +275,8 @@ Nmax = 1000     # max generations to run
 gMin, coords, n, iters, fitAv = GA(Natoms,Bbox,Npop,Pcross,Pmute,Pperm,Nmax)
 
 # print global minimum and generation number
-print 'genetic algorithm minimum = ', round(gMin,3)
-print 'iterations to convergence = ', n,'\n'
+print(f'genetic algorithm minimum = {round(gMin,3)}')
+print(f'iterations to convergence = {n}\\n')
 
 # plot trend of average fitness vs generation number
 plt.plot(range(iters),fitAv)

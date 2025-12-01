@@ -30,7 +30,7 @@ fs,spectrum = fft.FFTspectrum(t,f,sfreq)
 # pr    int max freq found in spectrum
 mx = max(spectrum)
 indx = np.where(spectrum==mx)[0]
-print '\n','max freq =',round(fs[indx],2)
+print('\n','max freq =',round(fs[indx],2))
 
 # plot freq domain signal
 plt.plot(fs,spectrum,'g', label='$t=64\ sec$')

@@ -19,7 +19,6 @@ radiation, find a model that fits the data the best.
 #       All comments about the code are in the original program named above. 
 
 
-from math import exp,log
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -31,9 +30,9 @@ t, rad = np.loadtxt('FukushimaDataFile.txt', skiprows=1, unpack=True)
 # function for exponential model and derivatives for fitting
 #*******************************************************************
 def fitfuncsExp(c0,c1,x):
-    f = c0*exp(c1*x)
-    df1 = exp(c1*x)
-    df2 = c0*x*exp(c1*x)
+    f = c0*np.exp(c1*x)
+    df1 = np.exp(c1*x)
+    df2 = c0*x*np.exp(c1*x)
     
     return f,df1,df2
 #*******************************************************************
@@ -42,8 +41,8 @@ def fitfuncsExp(c0,c1,x):
 # function for logarithmic model and derivatives for fitting
 #*******************************************************************    
 def fitfuncsLog(d0,d1,x):
-    g = d0*log(x) + d1
-    dg1 = log(x)
+    g = d0*np.log(x) + d1
+    dg1 = np.log(x)
     dg2 = 1.0    
     
     return g,dg1,dg2
@@ -132,8 +131,8 @@ def GaussNewtonFit(x,y,c0,c1,d0,d1,n):
     varianceExp = varsumExp/(pts-2-1)
     varianceLog = varsumLog/(pts-2-1)
     
-    print c0,c1,d0,d1
-    print varianceExp,varianceLog
+    print(c0,c1,d0,d1)
+    print(varianceExp,varianceLog)
             
     # plot data set with exponential fit and annotate variance
     plt.title('Fukushima Power Plant Radiation Leak (2011 Earthquake)\n Gauss-Newton Least Squares Fit')

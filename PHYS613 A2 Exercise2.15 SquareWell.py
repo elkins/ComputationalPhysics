@@ -9,7 +9,6 @@ Nick Crump
 From Computational Physics by Devries
 """
 
-from math import sin,cos
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,10 +18,10 @@ import matplotlib.pyplot as plt
 def evenFunc(a,m,V0,E):
     hbarSq = 0.076199682    # eV(nm**2)(Melectron)
     
-    alpha = (2.0*m*E/hbarSq)**0.5
-    beta = ((2.0*m*(V0-E))/hbarSq)**0.5
+    alpha = np.sqrt(2.0*m*E/hbarSq)
+    beta = np.sqrt(2.0*m*(V0-E)/hbarSq)
     
-    fEven = beta*cos(alpha*a) - alpha*sin(alpha*a)
+    fEven = beta*np.cos(alpha*a) - alpha*np.sin(alpha*a)
     return fEven
 #***********************************************************************  
 
@@ -32,10 +31,10 @@ def evenFunc(a,m,V0,E):
 def oddFunc(a,m,V0,E):
     hbarSq = 0.076199682    # eV(nm**2)(Melectron)
     
-    alpha = (2.0*m*E/hbarSq)**0.5
-    beta = ((2.0*m*(V0-E))/hbarSq)**0.5
+    alpha = np.sqrt(2.0*m*E/hbarSq)
+    beta = np.sqrt(2.0*m*(V0-E)/hbarSq)
     
-    fOdd = alpha*cos(alpha*a) + beta*sin(alpha*a)
+    fOdd = alpha*np.cos(alpha*a) + beta*np.sin(alpha*a)
     return fOdd
 #***********************************************************************  
 
@@ -58,18 +57,18 @@ def rootBisection(f, xI, xF, Tol, nMax):
             if f(xI)*f(xMid) > 0:
                 xI = xMid
                 error = abs(xMid - xiMid)  # calculate approx error
-                n = n + 1
+                n += 1
                 xiMid = xMid               # store the n-1 midpoint
                 
             elif f(xI)*f(xMid) < 0:
                 xF = xMid
                 error = abs(xMid - xiMid)  # calculate approx error
-                n = n + 1
+                n += 1
                 xiMid = xMid               # store the n-1 midpoint
         
         # output results to user         
-        print 'Root =', xMid
-        print 'Iterations = ', n-1
+        print(f'Root = {xMid}')
+        print(f'Iterations = {n-1}')
             
 # end rootBisection function
 #***********************************************************************
@@ -96,7 +95,7 @@ for i in E:
     oddF.append(fOdd) 
     
 plt.figure(1)
-plt.plot([0,V0],[0,0],'k',linewidth='2')
+plt.plot([0,V0],[0,0],'k',linewidth=2)
 plt.plot(E,evenF,'b',label='Even States')
 plt.plot(E,oddF,'r',label='Odd States')
 plt.xlabel('Energy (eV)')

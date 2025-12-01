@@ -58,9 +58,9 @@ fs,spectrum = fft.FFTspectrum(t,pos,sfreq)
 # convert freq axis in Hz to omega (omega = 2*pi*f)
 fs = fs*2*np.pi
 # find freq at strongest peak
-indx = np.where(spectrum==max(spectrum))[0]
+indx = np.argmax(spectrum)
 mx = round(fs[indx],3)
-print 'peak = ',mx
+print(f'peak = {mx}')
 
 # plot results
 # -----------------------------

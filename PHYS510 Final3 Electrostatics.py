@@ -176,8 +176,8 @@ for i in theta:
     
 # calculate RMS error between approximated and actual potentials over (0,pi)
 squares = [i**2 for i in Verrors]
-RMS = ((sum(squares))**0.5) / len(Verrors)
-print 'n =','%02.0f' % n, '  RMS =','%0.10f' % RMS
+RMS = np.sqrt(sum(squares)) / len(Verrors)
+print(f'n = {n:02.0f}  RMS = {RMS:0.10f}')
 
 # plot series approx to potential with actual potential for given order n
 fig = plt.figure()

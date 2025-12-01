@@ -52,7 +52,7 @@ def Epidemic(N, seed, p):
             Osites.append(site)
             
             # calculate growth rate of perimeter
-            dist = ((seed[0]-site[0])**2 + (seed[1]-site[1])**2)**0.5
+            dist = np.sqrt((seed[0]-site[0])**2 + (seed[1]-site[1])**2)
             if dist > dist0:
                 dist0 = dist
                 size.append(dist)
@@ -99,8 +99,8 @@ logStep = np.log(step)
 logSize = np.log(size)
 
 # calculate growth rate
-rate = logSize[len(logSize)-1]/logStep[len(logStep)-1] 
-print '\n','growth rate = ', round(rate,3)
+rate = logSize[-1]/logStep[-1]
+print('\n','growth rate = ', round(rate,3))
 
 # get max point for setting axis limits
 mx = [max(np.abs(x)), max(np.abs(y))]

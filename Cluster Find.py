@@ -154,7 +154,7 @@ def ClusterFind(filename, N, iters, txt, vis):
     # ----------------------------------------------------------
         
     # print total clusters found
-    print '\nclusters = ', len(set(labels)) 
+    print(f'\nclusters = {len(set(labels))}') 
 #*******************************************************************
 
 # sample function call

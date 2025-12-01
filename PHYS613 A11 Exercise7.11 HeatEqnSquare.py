@@ -50,7 +50,7 @@ iters = 0
 
 while done == 'no':
     done = 'yes'
-    iters = iters + 1    
+    iters += 1    
     
     # iterate over xy-grid (i = y-row, j = x-col)
     for i in range(0,Ny-1):
@@ -107,7 +107,7 @@ while done == 'no':
             if err > tol:
                 done = 'no'
 
-print '\n','iterations = ',iters
+print('\n','iterations = ',iters)
 # --------------------------------------------
 
 
@@ -115,7 +115,7 @@ print '\n','iterations = ',iters
 TMin = np.min(temp)
 TMax = np.max(temp)
 levels = np.arange(int(TMin),int(TMax),1)
-print 'max temp =',TMax
+print('max temp =',TMax)
         
 # build x,y meshgrids for plotting axes
 xpts = np.linspace(0,1,Nx)

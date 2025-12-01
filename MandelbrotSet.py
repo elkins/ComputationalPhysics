@@ -57,5 +57,5 @@ plt.plot(x,y,'.k')
 
 # print elapsed time
 t1 = datetime.now()
-print '\nelapsed time:'
-print t1-t0
+print('\nelapsed time:')
+print(t1-t0)

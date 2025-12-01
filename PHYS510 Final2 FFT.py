@@ -74,7 +74,7 @@ def FFTspectrum(t,amp):
     plt.show(fig)
     
     # print freq components observed in plot to get exact value
-    print [round(freq[i],2) for i in range(npts) if spectrum[i] > 15000]
+    print([round(freq[i],2) for i in range(npts) if spectrum[i] > 15000])
     
     
 FFTspectrum(t,amp)
@@ -93,11 +93,11 @@ f4 = 18801.43/1000  # kHz
 fExtra = f4*1.05    # kHz (add extra freq to be 1.05*maxFreq for second plot)
 
 # generate components of origninal signal f(t) = sin(2pi*fn*t) + ...
-sig1 = np.sin(2*pi*f1*t)
-sig2 = np.sin(2*pi*f2*t)
-sig3 = np.sin(2*pi*f3*t)
-sig4 = np.sin(2*pi*f4*t)
-sigExtra = np.sin(2*pi*fExtra*t)  # add extra freq term for fExtra plot
+sig1 = np.sin(2*np.pi*f1*t)
+sig2 = np.sin(2*np.pi*f2*t)
+sig3 = np.sin(2*np.pi*f3*t)
+sig4 = np.sin(2*np.pi*f4*t)
+sigExtra = np.sin(2*np.pi*fExtra*t)  # add extra freq term for fExtra plot
 
 # build reconstructed signal
 newSig = sig1 + sig2 + sig3 + sig4  # original signal
@@ -181,5 +181,5 @@ plt.annotate('f5 = 43427.22 Hz', fontsize=12, xy=(0.50,0.15), xycoords='figure f
 plt.show(fig)
 
 # print freq components observed in plot to get exact value
-print [round(freq[i],2) for i in range(npts) if spectrum[i] > 60000]
+print([round(freq[i],2) for i in range(npts) if spectrum[i] > 60000])
 #------------------------------------------------------------------

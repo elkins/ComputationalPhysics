@@ -60,8 +60,8 @@ for i in collisions:
             y = pos[0]*sin(pos[1])*sin(pos[2])
             z = pos[0]*cos(pos[1])
         
-            # get total displacement traveled and store to array
-            dist = (x**2 + y**2 + z**2)**0.5
+            # get displacement traveled and store to array
+            dist = np.sqrt(x**2 + y**2 + z**2)
             disp.append(dist)
 
         # get mean displacement over N collisions
@@ -76,8 +76,8 @@ for i in collisions:
 logx = np.log(np.array(collisions))
 logy = np.log(np.array(Mdisp1))
 # calculate slope of log-log plot to get power coefficient
-rise = logy[len(logy)-1] - logy[0]
-run = logx[len(logx)-1] - logx[0]
+rise = logy[-1] - logy[0]
+run = logx[-1] - logx[0]
 slope = round(rise/run,3)
 
 

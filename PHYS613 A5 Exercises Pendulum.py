@@ -92,7 +92,8 @@ for i in theta0:
     period.append(p)
     
     # check when period differs from simple pendulum period by more than 1%
-    if abs(p-Tsimp) > 0.01*Tsimp: print i,p,Tsimp
+    if abs(p-Tsimp) > 0.01*Tsimp: 
+        print(f'{i} {p} {Tsimp}')
         
   
 # plot results   

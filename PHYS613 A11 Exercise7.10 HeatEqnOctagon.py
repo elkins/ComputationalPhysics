@@ -66,7 +66,7 @@ iters = 0
 
 while done == 'no':
     done = 'yes'
-    iters = iters + 1    
+    iters += 1    
     
     # iterate over xy-grid (i = y-row, j = x-col)
     for i in range(1,Ny-1):
@@ -123,14 +123,14 @@ temp[5][14] = 0
 temp[5][15] = 0
 
 
-print '\n','iterations = ',iters
+print('\n','iterations = ',iters)
 # --------------------------------------------
 
 
 # set contour levels for plotting
 TMax = np.max(temp)
 levels = np.arange(0,int(TMax),0.5)
-print 'max temp =',TMax
+print('max temp =',TMax)
         
 # build x,y meshgrids for plotting axes
 xpts = np.linspace(0,1,Nx)

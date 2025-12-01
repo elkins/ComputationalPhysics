@@ -48,7 +48,7 @@ def AnglesToMatrix(rx,ry,rz):
 
 # test angles
 R = AnglesToMatrix(30,60,90)
-print R, '\n'
+print(R, '\\n')
 
 rx, ry, rz = MatrixToAngles(R)
-print rx*(180/pi), ry*(180/pi), rz*(180/pi)
+print(rx*(180/np.pi), ry*(180/np.pi), rz*(180/np.pi))

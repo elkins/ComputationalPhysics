@@ -68,11 +68,11 @@ if spanning > 0:
             pos = stpPos
             x.append(pos[0])
             y.append(pos[1])
-            dist = ((mid - pos[0])**2 + (mid - pos[1])**2)**0.5
+            dist = np.sqrt((mid - pos[0])**2 + (mid - pos[1])**2)
             disp.append(dist)
         
         else:
-            print 'breakout'
+            print('breakout')
             break 
     
     # get logs of both sides
@@ -80,8 +80,8 @@ if spanning > 0:
     logD = np.log(disp)
     
     # calculate fractal dimension
-    k = round(logD[len(logD)-1]/logS[len(logS)-1],3)  
-    print 'k = ',k, ' z = ',1.0/k
+    k = round(logD[-1]/logS[-1],3)
+    print('k = ',k, ' z = ',1.0/k)
     
     # plot random walk path on percolating cluster
     plt.figure()
@@ -106,4 +106,4 @@ if spanning > 0:
     plt.legend(loc=2)
 
 t2 = datetime.now()
-print 'runtime = ',t2-t1
+print(f'runtime = {t2-t1}')
