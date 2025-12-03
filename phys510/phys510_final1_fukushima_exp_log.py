@@ -142,11 +142,11 @@ def GaussNewtonFit(x,y,c0,c1,d0,d1,n):
     
     plt.plot(x,expval, 'r', linewidth=1.5, label='Exponential Model')
     plt.annotate('$variance=1.12$',fontsize=13,xy=(0.73,0.66),xycoords='figure fraction')
-    plt.annotate('$f = 18.12\exp(-0.00056t)$',fontsize=14,xy=(0.40,0.66),xycoords='figure fraction')
+    plt.annotate(r'$f = 18.12\exp(-0.00056t)$',fontsize=14,xy=(0.40,0.66),xycoords='figure fraction')
     
     plt.plot(x,logval, 'g', linewidth=1.5, label='Logarithmic Model')
     plt.annotate('$variance=0.63$',fontsize=13,xy=(0.73,0.58),xycoords='figure fraction')
-    plt.annotate('$f = -4.59\ln(t)+40.41$',fontsize=14,xy=(0.40,0.58),xycoords='figure fraction')
+    plt.annotate(r'$f = -4.59\ln(t)+40.41$',fontsize=14,xy=(0.40,0.58),xycoords='figure fraction')
     
     plt.legend()
 #******************************************************************* 

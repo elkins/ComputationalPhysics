@@ -57,8 +57,8 @@ plt.legend(loc=4)
 plt.figure(2)
 plt.plot(Cv,Sv,label='Cornu Spiral')
 plt.plot([-0.5,0.5],[-0.5,0.5],'rx',markersize=8)
-plt.xlabel('Fresnel $C\ (v)$')
-plt.ylabel('Fresnel $S\ (v)$')
+plt.xlabel(r'Fresnel $C\ (v)$')
+plt.ylabel(r'Fresnel $S\ (v)$')
 plt.legend(loc=2)
 #*******************************************************************
 

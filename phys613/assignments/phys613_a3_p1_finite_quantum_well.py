@@ -95,7 +95,7 @@ plt.plot([0,1],[0,0],'k',linestyle='--')
 plt.plot([0.07110,0.28213,0.62268],[0,0,0],'bo')
 plt.plot(E,psiArrE,'b',label='Allowed Energy Function')
 plt.xlabel('Energy (eV)')
-plt.ylabel('$f\ (E)$')
+plt.ylabel(r'$f\ (E)$')
 plt.legend()
 
 
@@ -165,13 +165,13 @@ plt.plot([-2,6],[E2,E2],'g',linewidth='2',linestyle='--')
 plt.plot([-2,6],[E3,E3],'g',linewidth='2',linestyle='--')
 # plot wavefunctions
 # wavefunction psiE1
-plt.plot(R1,psiR1E1,'b',label='$\psi_{E1}\ (x)$')
+plt.plot(R1,psiR1E1,'b',label=r'$\psi_{E1}\ (x)$')
 plt.plot(R2,psiR2E1,'b')
 # wavefunction psiE2
-plt.plot(R1,psiR1E2,'r',label='$\psi_{E2}\ (x)$')
+plt.plot(R1,psiR1E2,'r',label=r'$\psi_{E2}\ (x)$')
 plt.plot(R2,psiR2E2,'r')
 # wavefunction psiE3
-plt.plot(R1,psiR1E3,'g',label='$\psi_{E3}\ (x)$')
+plt.plot(R1,psiR1E3,'g',label=r'$\psi_{E3}\ (x)$')
 plt.plot(R2,psiR2E3,'g')
 # set x,y plot limits
 plt.xlim(-2.0,6.0)
@@ -204,13 +204,13 @@ plt.plot([-2,6],[E2,E2],'g',linewidth='2',linestyle='--')
 plt.plot([-2,6],[E3,E3],'g',linewidth='2',linestyle='--')
 # plot wavefunctions
 # wavefunction psiE1
-plt.plot(R1,psiR1E1Sq,'b',label='$|\psi_{E1}|^2\ (x)$')
+plt.plot(R1,psiR1E1Sq,'b',label=r'$|\psi_{E1}|^2\ (x)$')
 plt.plot(R2,psiR2E1Sq,'b')
 # wavefunction psiE2
-plt.plot(R1,psiR1E2Sq,'r',label='$|\psi_{E2}|^2\ (x)$')
+plt.plot(R1,psiR1E2Sq,'r',label=r'$|\psi_{E2}|^2\ (x)$')
 plt.plot(R2,psiR2E2Sq,'r')
 ## wavefunction psiE3
-plt.plot(R1,psiR1E3Sq,'g',label='$|\psi_{E3}|^2\ (x)$')
+plt.plot(R1,psiR1E3Sq,'g',label=r'$|\psi_{E3}|^2\ (x)$')
 plt.plot(R2,psiR2E3Sq,'g')
 # set x,y plot limits
 plt.xlim(-2.0,6.0)

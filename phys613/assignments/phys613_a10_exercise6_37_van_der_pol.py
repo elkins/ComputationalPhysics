@@ -74,7 +74,7 @@ plt.legend(loc=2)
 # plot freq domain signal
 plt.figure(2)
 plt.plot(fs,spectrum, label='van der Pol Spectrum')
-plt.xlabel('$\omega$',fontsize=18)
+plt.xlabel(r'$\omega$',fontsize=18)
 plt.ylabel('Normalized Magnitude')
 plt.annotate('$peak=1.782$',fontsize=18,xy=(0.63,0.75),xycoords='figure fraction')
 plt.xlim(0,10)

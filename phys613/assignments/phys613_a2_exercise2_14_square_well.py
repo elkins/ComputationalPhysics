@@ -109,7 +109,7 @@ plt.plot(E,evenF,'b',label='Even States')
 plt.plot(E,oddF,'r',label='Odd States')
 plt.plot(Eeven,0,'bo',Eodd,0,'ro')
 plt.xlabel('Energy (eV)')
-plt.ylabel('$f\ (E)$')
+plt.ylabel(r'$f\ (E)$')
 plt.legend(loc=9)
 
 
@@ -157,10 +157,10 @@ plt.annotate('Ground State Energies',fontsize=12,xy=(0.39,0.27),xycoords='figure
 plt.annotate('$E_{even}=0.71545$',fontsize=12,xy=(0.75,0.20),xycoords='figure fraction')
 plt.annotate('$E_{odd}=2.82139$',fontsize=12,xy=(0.755,0.40),xycoords='figure fraction')
 # plot wavefunctions for each ground state energy
-plt.plot(R1,psiR1even,'b',label='$\psi_{even}\ ({x})$')
+plt.plot(R1,psiR1even,'b',label=r'$\psi_{even}\ ({x})$')
 plt.plot(R2,psiR2even,'b')
 plt.plot(R3,psiR3even,'b')
-plt.plot(R1,psiR1odd,'r',label='$\psi_{odd}\ ({x})$')
+plt.plot(R1,psiR1odd,'r',label=r'$\psi_{odd}\ ({x})$')
 plt.plot(R2,psiR2odd,'r')
 plt.plot(R3,psiR3odd,'r')
 plt.annotate(r'$\psi_{1}=C\ \exp({\beta x})$',fontsize=12,xy=(0.15,0.625),xycoords='figure fraction')

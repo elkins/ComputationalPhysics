@@ -40,7 +40,7 @@ plt.ylabel('Amplitude')
 
 # plot freq domain signal
 plt.subplot(212)
-plt.plot(fs,spectrum, label='$128\ Hz\ sample$' +'\n' '$\ \ \ \ 3\ Hz\ freq$')
+plt.plot(fs,spectrum, label=r'$128\ Hz\ sample$' +'\n' r'$\ \ \ \ 3\ Hz\ freq$')
 plt.xlabel('Frequency (Hz)')
 plt.ylabel('Normalized Magnitude')
 plt.xlim(0,20)

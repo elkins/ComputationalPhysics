@@ -105,13 +105,13 @@ ExtraSig = newSig + sigExtra        # original signal + fExtra term
 
 # plot original signal on msec scale (t/1000) to see strong signal
 fig = plt.subplot(211)
-plt.title('Reconstructed Time-Domain Signals from FFT\n $f(t)= sin(2 \pi f_1 t) + sin(2 \pi f_2 t) + sin(2 \pi f_3 t) + sin(2 \pi f_4 t)$')
+plt.title(r'Reconstructed Time-Domain Signals from FFT\n $f(t)= sin(2 \pi f_1 t) + sin(2 \pi f_2 t) + sin(2 \pi f_3 t) + sin(2 \pi f_4 t)$')
 plt.ylabel('Amplitude')
 plt.plot(t/1000,newSig, linewidth=1.2)
 
 # plot original signal + fExtra term on msec scale (t/1000) to see strong signal
 fig = plt.subplot(212)
-plt.title('$g(t)= f(t) + sin(2 \pi 1.05f_{max} t)$')
+plt.title(r'$g(t)= f(t) + sin(2 \pi 1.05f_{max} t)$')
 plt.xlabel('Time (msec)')
 plt.ylabel('Amplitude')
 plt.plot(t/1000,ExtraSig, linewidth=1.2)

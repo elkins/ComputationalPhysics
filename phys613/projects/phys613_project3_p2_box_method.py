@@ -57,7 +57,7 @@ if spanning > 0:
     
     # plot M vs l trend - should follow power law M = l**b
     plt.subplot(2,1,1)
-    plt.plot(Lsize,Nsite,'b.-', label='$M\ (l)$')
+    plt.plot(Lsize,Nsite,'b.-', label=r'$M\ (l)$')
     plt.xlabel('Box Length $l$')
     plt.ylabel('Number of Sites $M$')
     plt.annotate('$600x600$',fontsize=18,xy=(0.15,0.75),xycoords='figure fraction')

@@ -110,7 +110,7 @@ def GaussNewtonFit(x,y,a,b,c,d,n):
     plt.plot(x,y,'b', linewidth=1.8, label='Observed Data')
     
     plt.plot(x,expval, 'r', linewidth=1.5, label='Exponential Model')
-    plt.annotate('$f = 7.86\exp(-0.00027t) + 13.99\exp(-0.00153t)$',fontsize=14,xy=(0.40,0.68),xycoords='figure fraction')
+    plt.annotate(r'$f = 7.86\exp(-0.00027t) + 13.99\exp(-0.00153t)$',fontsize=14,xy=(0.40,0.68),xycoords='figure fraction')
     plt.annotate('$variance=0.24$',fontsize=13,xy=(0.65,0.60),xycoords='figure fraction')
     
     plt.legend()

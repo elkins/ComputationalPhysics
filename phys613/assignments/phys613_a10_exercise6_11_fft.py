@@ -33,7 +33,7 @@ indx = np.where(spectrum==mx)[0]
 print('\n','max freq =',round(fs[indx],2))
 
 # plot freq domain signal
-plt.plot(fs,spectrum,'g', label='$t=64\ sec$')
+plt.plot(fs,spectrum,'g', label=r'$t=64\ sec$')
 plt.xlabel('Frequency (Hz)')
 plt.ylabel('Normalized Magnitude')
 plt.legend()
