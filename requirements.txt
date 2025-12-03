@@ -1,0 +1,14 @@
+# Computational Physics Dependencies
+# Python 3.7+
+
+# Core scientific computing
+numpy>=1.21.0
+scipy>=1.7.0
+matplotlib>=3.4.0
+
+# GUI support (for Foucault Pendulum and other interactive programs)
+# Uncomment if using GUI features:
+# tkinter is usually included with Python on most systems
+
+# Development and testing
+# pytest>=7.0.0  # Uncomment if adding unit tests beyond syntax validation

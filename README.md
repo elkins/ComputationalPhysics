@@ -31,9 +31,14 @@ ComputationalPhysics/
 ## Requirements
 
 - Python 3.7+
-- NumPy
-- Matplotlib
-- SciPy (for some examples)
+- NumPy >= 1.21.0
+- Matplotlib >= 3.4.0
+- SciPy >= 1.7.0
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 ## Testing
 
@@ -42,12 +47,22 @@ Run the test suite to verify all files:
 python tests/test_syntax_and_imports.py
 ```
 
+## Configuration Files
+
+- `requirements.txt` - Package dependencies
+- `pyproject.toml` - Project metadata and tool configurations (Black, isort, Pylint)
+- `.editorconfig` - Editor consistency settings
+- `.gitignore` - Git ignore patterns
+
 ## Modernization
 
 This codebase was modernized from Python 2 to Python 3 with the following improvements:
-- All `print` statements converted to `print()` functions
-- Modern f-string formatting throughout
-- Pythonic idioms (e.g., `np.sqrt()` instead of `**0.5`)
-- Consistent NumPy usage for mathematical operations
-- Automated test suite for ongoing validation
+- ✅ All `print` statements converted to `print()` functions
+- ✅ Modern f-string formatting throughout
+- ✅ Pythonic idioms (e.g., `np.sqrt()` instead of `**0.5`)
+- ✅ Consistent NumPy usage for mathematical operations
+- ✅ Files renamed to snake_case convention
+- ✅ Organized directory structure by course and topic
+- ✅ Automated test suite for ongoing validation
+- ✅ Configuration files for modern Python tooling
 
