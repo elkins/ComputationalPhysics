@@ -71,11 +71,17 @@ def test_no_old_string_formatting(filepath):
 
 def run_tests():
     """Run all tests on Python files in the repository"""
-    repo_path = Path(__file__).parent
-    python_files = list(repo_path.glob("*.py"))
+    repo_path = Path(__file__).parent.parent
     
-    # Exclude this test file itself
-    python_files = [f for f in python_files if f.name != "test_syntax_and_imports.py"]
+    # Find all Python files recursively
+    python_files = []
+    for pattern in ["**/*.py"]:
+        python_files.extend(repo_path.glob(pattern))
+    
+    # Exclude test files and hidden directories
+    python_files = [f for f in python_files 
+                    if f.name != "test_syntax_and_imports.py" 
+                    and not any(part.startswith('.') for part in f.parts)]
     
     if not python_files:
         print("No Python files found!")
@@ -88,7 +94,8 @@ def run_tests():
     failed_tests = []
     
     for py_file in sorted(python_files):
-        print(f"\nTesting: {py_file.name}")
+        relative_path = py_file.relative_to(repo_path)
+        print(f"\nTesting: {relative_path}")
         print("-" * 70)
         
         file_passed = True
@@ -118,7 +125,7 @@ def run_tests():
         
         if not file_passed:
             all_passed = False
-            failed_tests.append(py_file.name)
+            failed_tests.append(str(relative_path))
     
     print("\n" + "="*70)
     print("\nTEST SUMMARY")
